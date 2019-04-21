@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gkr.io/eduar-237421/uapp.com', '.']
+images: ['gkr.io/eduar-237421/uapp.com']

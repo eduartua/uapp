@@ -1,0 +1,30 @@
+{{define "yield"}}
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Let's see them</h1>
+        <p class="lead">These are the last ten users added to the platform. Of course this is not the well secured app, so be careful. This application is hosting withing a Kubernetes cluster at Google Cloud Platform. It is built to show how many GCP resources can interact, including Kubernetes, cloud databases, containers and so on.</p>
+    </div>
+    <a href="#" class="btn btn-lg btn-secondary" id="refresh">Refresh</a>
+    
+    <div class="container-fluid">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col"># id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Created</th>
+                </tr>
+            </thead>
+            {{ range . }}
+                <tbody>
+                    <tr>
+                    <th scope="row">{{.ID}}</th>
+                    <td>{{.Name}}</td>
+                    <td>{{.Email}}</td>
+                    <td>{{.CreatedAt.Format "Mon Jan _2 15:04:05 2006"}}</td>
+                    </tr>
+                </tbody>
+            {{end}}
+        </table>
+    </div>
+{{end}}
