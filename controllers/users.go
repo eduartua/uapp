@@ -11,9 +11,9 @@ import (
 
 func NewUsers(us *models.UserService) *Users {
 	return &Users{
-		NewView: views.NewView("bootstrap", "/views/users/new.gohtml"),
+		NewView: views.NewView("bootstrap", "uapp.com/views/users/new.gohtml"),
 		// LoginView: views.NewView("bootstrap", "/views/users/login.gohtml"),
-		HomeView: views.NewView("bootstrap", "/views/users/home.gohtml"),
+		HomeView: views.NewView("bootstrap", "uapp.com/views/users/home.gohtml"),
 		us:       us,
 	}
 }
