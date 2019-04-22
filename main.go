@@ -27,7 +27,7 @@ func main() {
 	}
 	//  Create DB connection string and then use it to create
 	//  our model services.
-	fmt.Println("Printing from last image 2.")
+	fmt.Println("Printing from last image 3.")
 	fmt.Println("host: ", host)
 	fmt.Println("port: ", port)
 	fmt.Println("user: ", user)
