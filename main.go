@@ -29,7 +29,6 @@ func main() {
 	//  our model services.
 	fmt.Println("host: ", host)
 	fmt.Println("port: ", port)
-	fmt.Println("port1: ", port1)
 	fmt.Println("user: ", user)
 	fmt.Println("password: ", password)
 	fmt.Println("dbname: ", dbname)
