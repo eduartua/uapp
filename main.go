@@ -15,7 +15,6 @@ import (
 
 var (
 	host            = os.Getenv("PGHOST")
-	port1           = os.Getenv("PGPORT")
 	port, portError = strconv.Atoi(strings.TrimSuffix(os.Getenv("PGPORT"), "\n"))
 	user            = os.Getenv("PGUSER")
 	password        = os.Getenv("PGPASSWORD")
