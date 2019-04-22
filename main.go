@@ -23,7 +23,11 @@ var (
 func main() {
 	//  Create DB connection string and then use it to create
 	//  our model services.
+	fmt.Println("host: ", host)
 	fmt.Println("port: ", port)
+	fmt.Println("user: ", user)
+	fmt.Println("password: ", password)
+	fmt.Println("dbname: ", dbname)
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 	us, err := models.NewUserService(psqlInfo)
 	if err != nil {
