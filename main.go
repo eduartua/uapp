@@ -14,6 +14,7 @@ import (
 
 var (
 	host     = os.Getenv("PGHOST")
+	port1    = os.Getenv("PGPORT")
 	port, _  = strconv.Atoi(os.Getenv("PGPORT"))
 	user     = os.Getenv("PGUSER")
 	password = os.Getenv("PGPASSWORD")
@@ -25,6 +26,7 @@ func main() {
 	//  our model services.
 	fmt.Println("host: ", host)
 	fmt.Println("port: ", port)
+	fmt.Println("port1: ", port1)
 	fmt.Println("user: ", user)
 	fmt.Println("password: ", password)
 	fmt.Println("dbname: ", dbname)
