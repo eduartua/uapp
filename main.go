@@ -49,7 +49,7 @@ func main() {
 	r.HandleFunc("/signup", usersC.Create).Methods("POST")
 
 	//Assets
-	assetHandler := http.FileServer(http.Dir("./public"))
+	assetHandler := http.FileServer(http.Dir("/test/uapp/public"))
 	assetHandler = http.StripPrefix("/public", assetHandler)
 	r.PathPrefix("/public/").Handler(assetHandler)
 
