@@ -10,8 +10,8 @@ RUN go build -o /test/uapp/uapp .
 
 FROM alpine
 
-RUN apk update && apk add ca-certificates
+COPY --from=builder /test/uapp/ /test/uapp
 
-ENV UAPP_PORT=3000
+RUN apk update && apk add ca-certificates
 
 CMD ["/test/uapp/uapp"]
