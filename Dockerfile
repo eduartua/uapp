@@ -10,7 +10,7 @@ RUN go build -o /test/uapp/uapp .
 
 FROM alpine
 
-COPY --from=builder /test/uapp/ /test/uapp
+COPY --from=builder /test/uapp /test/uapp
 
 RUN apk update && apk add ca-certificates
 
