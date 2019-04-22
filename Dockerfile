@@ -6,7 +6,7 @@ COPY . .
 ENV GO111MOD=on
 ENV CGO_ENABLE=0
 ENV GOPROXY=https://gocenter.io
-RUN go build -o /bin/uapp
+RUN go build -o /bin/uapp .
 
 FROM alpine
 
