@@ -3,8 +3,8 @@ ENV GOPATH=/gocode
 RUN mkdir -p /test/uapp
 WORKDIR /test/uapp
 COPY . .
-ENV GO111MOD=on
-ENV CGO_ENABLE=0
+ENV GO111MODULE=on
+ENV CGO_ENABLED=0
 ENV GOPROXY=https://gocenter.io
 RUN go build -o /bin/uapp .
 
