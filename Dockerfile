@@ -6,14 +6,12 @@ COPY . .
 ENV GO111MODULE=on
 ENV CGO_ENABLED=0
 ENV GOPROXY=https://gocenter.io
-RUN go build -o /bin/uapp .
+RUN go build -o /test/uapp/uapp .
 
 FROM alpine
-
-COPY --from=builder /bin/uapp /bin/uapp
 
 RUN apk update && apk add ca-certificates
 
 ENV UAPP_PORT=3000
 
-CMD ["/bin/uapp"]
+CMD ["/test/uapp/uapp"]
