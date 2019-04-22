@@ -13,15 +13,18 @@ import (
 )
 
 var (
-	host     = os.Getenv("PGHOST")
-	port1    = os.Getenv("PGPORT")
-	port, _  = strconv.Atoi(os.Getenv("PGPORT"))
-	user     = os.Getenv("PGUSER")
-	password = os.Getenv("PGPASSWORD")
-	dbname   = os.Getenv("PGDB")
+	host            = os.Getenv("PGHOST")
+	port1           = os.Getenv("PGPORT")
+	port, portError = strconv.Atoi(os.Getenv("PGPORT"))
+	user            = os.Getenv("PGUSER")
+	password        = os.Getenv("PGPASSWORD")
+	dbname          = os.Getenv("PGDB")
 )
 
 func main() {
+	if portError != nil {
+		panic(portError)
+	}
 	//  Create DB connection string and then use it to create
 	//  our model services.
 	fmt.Println("host: ", host)
