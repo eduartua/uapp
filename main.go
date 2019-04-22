@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 
 	"uapp.com/controllers"
 	"uapp.com/models"
@@ -15,7 +16,7 @@ import (
 var (
 	host            = os.Getenv("PGHOST")
 	port1           = os.Getenv("PGPORT")
-	port, portError = strconv.Atoi(os.Getenv("PGPORT"))
+	port, portError = strconv.Atoi(strings.TrimSuffix(os.Getenv("PGPORT"), "\n"))
 	user            = os.Getenv("PGUSER")
 	password        = os.Getenv("PGPASSWORD")
 	dbname          = os.Getenv("PGDB")
